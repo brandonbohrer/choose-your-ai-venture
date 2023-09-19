@@ -31,15 +31,7 @@ public class Main {
                 "Where am I?");
         messages.add(firstUserMessage);
         
-        
-        
-        
-        
-        
-        
-        
-        while(true) {
-        	
+        while(true) {  	
         	ChatCompletionRequest chatCompletionRequest = ChatCompletionRequest.builder()
                     .model("gpt-3.5-turbo")
                     .temperature(0.6d)
@@ -58,16 +50,12 @@ public class Main {
         	if (responseMessage.contains("You have found the hidden treasure!")) {
         		System.exit(0);
         		input.close();
-        	}
-        	
+        	}       	
         	ChatMessage userMessage = new ChatMessage (
         			ChatMessageRole.USER.value(),
         		input.nextLine());
-        	messages.add(userMessage);
-        	
-            
-        }
-        
+        	messages.add(userMessage);          
+        }      
     }
     
     private static String retrieveResponse(ChatCompletionResult chatCompletionResult) {
